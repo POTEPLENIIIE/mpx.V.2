@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<!-- Toast -->
+<div class="toast" *ngIf="toastMessage" [ngClass]="toastType">
+  {{ toastMessage }}
+</div>
+
+<section class="auth-wrapper">
+  <div class="auth-box">
+    <h2>Увійти</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- Username or Email -->
+      <input
+        type="text"
+        formControlName="usernameOrEmail"
+        placeholder="Email або Ім'я користувача"
+      />
+      <div
+        *ngIf="
+          loginForm.controls.usernameOrEmail.invalid &&
+          loginForm.controls.usernameOrEmail.touched
+        "
+        class="error"
+      >
+        Введіть коректний email або ім'я користувача
+      </div>
+
+      <!-- Пароль -->
+      <div class="password-group">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Пароль"
+        />
+        <span class="toggle" (click)="togglePassword()">👁</span>
+      </div>
+      <div *ngIf="password?.invalid && password?.touched" class="error">
+        Пароль не може бути порожнім
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Увійти</button>
+
+      <div class="switch-link">
+        Немає акаунту?
+        <a routerLink="/register">Зареєструватися</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

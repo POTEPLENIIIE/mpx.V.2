@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="logo">Minecraft Project X</div>
+
+  <!-- Бургер -->
+  <div class="burger" (click)="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Навігація -->
+  <nav [ngClass]="{ open: menuOpen }">
+    <!-- Якщо НЕ авторизований -->
+    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/home" routerLinkActive="active-link">Сайт</a>
+    </div>
+    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/register" routerLinkActive="active-link">Реєстрація</a>
+    </div>
+    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/login" routerLinkActive="active-link">Логін</a>
+    </div>
+    <!-- Якщо авторизований -->
+    <div *ngIf="authService.isLoggedIn()" class="nav-item">
+      <a
+        routerLink="/profile"
+        routerLinkActive="active-link"
+        (click)="to_dashboard($event)"
+        >Профіль</a
+      >
+    </div>
+    <div *ngIf="authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/settings" (click)="to_settings($event)">Налаштування</a>
+    </div>
+    <div *ngIf="authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/payments" (click)="to_payments($event)">Платежі</a>
+    </div>
+    <div *ngIf="authService.isLoggedIn()" class="nav-item">
+      <a routerLink="/login" (click)="exit($event)">Вийти</a>
+    </div>
+  </nav>
+</div>

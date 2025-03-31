@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+
+<!-- Toast -->
+<div class="toast" *ngIf="toastMessage" [ngClass]="toastType">
+  {{ toastMessage }}
+</div>
+
+<section class="auth-wrapper">
+  <div class="auth-box">
+    <h2>Реєстрація</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Ім'я користувача -->
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Ім'я користувача"
+      />
+      <div class="error" *ngIf="username?.invalid && username?.touched">
+        Введіть мінімум 3 символи
+      </div>
+
+      <!-- Email -->
+      <input type="email" formControlName="email" placeholder="Email" />
+      <div class="error" *ngIf="email?.invalid && email?.touched">
+        Введіть коректний email
+      </div>
+
+      <!-- Пароль -->
+      <div class="password-group">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Пароль"
+        />
+        <span class="toggle" (click)="togglePassword()">👁</span>
+      </div>
+      <div class="error" *ngIf="password?.invalid && password?.touched">
+        Пароль має бути не менше 6 символів
+      </div>
+
+      <!-- Підтвердження паролю -->
+      <div class="password-group">
+        <input
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+          placeholder="Підтвердіть пароль"
+        />
+        <span class="toggle" (click)="toggleConfirmPassword()">👁</span>
+      </div>
+      <div
+        class="error"
+        *ngIf="registerForm.hasError('mismatch') && confirmPassword?.touched"
+      >
+        Паролі не співпадають
+      </div>
+
+      <!-- Кнопка -->
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid || registerForm.pristine"
+      >
+        Зареєструватися
+      </button>
+
+      <div class="switch-link">
+        Маєш акаунт?
+        <a routerLink="/login">Увійти</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<!-- Toast -->
+<div class="toast" *ngIf="toastMessage" [ngClass]="toastType">
+  {{ toastMessage }}
+</div>
+
+<section class="profile-wrapper">
+  <div class="profile-container">
+    <h2>Профіль користувача</h2>
+
+    <div *ngIf="userData" class="profile-box">
+      <img
+        *ngIf="userData.avatar"
+        [src]="'http://localhost:4000/uploads/avatars/' + userData.avatar"
+        alt="Аватар"
+        class="avatar-img"
+      />
+      <div class="profile-details">
+        <p><strong>Ім'я користувача:</strong> {{ userData.username }}</p>
+        <p><strong>Email:</strong> {{ userData.email }}</p>
+        <p><strong>Баланс:</strong> {{ userData.balance }} коїнів</p>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

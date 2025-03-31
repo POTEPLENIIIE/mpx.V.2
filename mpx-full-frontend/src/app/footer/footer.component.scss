@@ -1,0 +1,42 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: #666;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 13px;
+
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
