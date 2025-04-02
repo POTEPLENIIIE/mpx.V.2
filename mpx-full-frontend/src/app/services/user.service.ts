@@ -6,17 +6,23 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class UserService {
-  private apiUrl = "http://localhost:4000/api/auth/me"; // Потрібно вказати правильний URL
+  private apiUrl = "http://localhost:4000/api/profile";
 
   constructor(private http: HttpClient) {}
 
   getUserProfile(): Observable<any> {
-    const token = localStorage.getItem("token"); // Отримуємо токен з локального сховища
-    if (!token) {
-      throw new Error("Токен відсутній");
-    }
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`); // Додаємо токен в заголовок
+    const token = localStorage.getItem("token");
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
+    return this.http.get<any>(`${this.apiUrl}/me`, { headers });
+  }
 
-    return this.http.get<any>(this.apiUrl, { headers }); // Отримуємо дані профілю користувача
+  uploadAvatar(formData: FormData): Observable<{ avatarUrl: string }> {
+    const token = localStorage.getItem("token");
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
+    return this.http.post<{ avatarUrl: string }>(
+      `${this.apiUrl}/avatar`,
+      formData,
+      { headers }
+    );
   }
 }

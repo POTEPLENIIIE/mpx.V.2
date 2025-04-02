@@ -1,44 +1,50 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { UserService } from "../services/user.service";
+import { AvatarUploadComponent } from "../avatar-upload/avatar-upload.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
-import { UserService } from "../services/user.service";
 import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-profile",
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule],
+  imports: [
+    CommonModule,
+    NavbarComponent,
+    FooterComponent,
+    AvatarUploadComponent,
+  ],
   templateUrl: "./profile.component.html",
-  styleUrl: "./profile.component.css",
+  styleUrl: "./profile.component.scss",
 })
 export class ProfileComponent implements OnInit {
   userData: any = {};
-  errorMessage: string = "";
+  now: number = Date.now();
+  errorMessage = "";
+  toastMessage = "";
+  toastType = "";
 
-  toastMessage: string = "";
-  toastType: string = "";
-
-  constructor(
-    private userService: UserService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    console.log("ТОКЕН:", localStorage.getItem("token"));
     this.getUserData();
   }
 
-  getUserData() {
+  getUserData(): void {
     this.userService.getUserProfile().subscribe({
       next: (data) => {
-        console.log("Отримані дані користувача:", data);
-        this.userData = data;
-        this.cdr.detectChanges(); // 🧠 примусове оновлення DOM
+        console.log("🟢 Нові дані:", data);
+        this.userData = JSON.parse(JSON.stringify(data)); // форсує зміну референсу
+        this.now = Date.now();
       },
-      error: (error) => {
-        console.error("Помилка отримання даних:", error);
-        this.errorMessage = "Не вдалося завантажити дані користувача.";
+      error: (err) => {
+        console.error("❌ Помилка отримання:", err);
+        this.errorMessage = "Не вдалося отримати дані профілю.";
       },
     });
+  }
+  handleAvatarUpdate(newAvatarFilename: string): void {
+    this.userData.avatar = newAvatarFilename; // ⚡ оновлюємо вручну
+    this.now = Date.now(); // 🔁 кеш-байпас
   }
 }

@@ -1,0 +1,29 @@
+<div class="avatar-upload-container">
+  <button type="button" (click)="triggerFileInput()">
+    Обрати аватар (.jpg)
+  </button>
+  <input
+    #fileInput
+    type="file"
+    accept=".jpg,.jpeg"
+    (change)="onFileSelected($event)"
+    hidden
+  />
+
+  <div *ngIf="previewUrl" class="preview-section">
+    <div class="popup-box">
+      <h3>Попередній перегляд</h3>
+      <p class="info-text">
+        Ось як виглядатиме ваш новий аватар. Якщо все влаштовує — натисніть
+        "Завантажити".
+      </p>
+      <img [src]="previewUrl" alt="Превʼю" class="avatar-preview" />
+      <div class="popup-buttons">
+        <button type="button" (click)="onUploadClicked()">Завантажити</button>
+        <button type="button" class="cancel-btn" (click)="cancelPreview()">
+          Скасувати
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

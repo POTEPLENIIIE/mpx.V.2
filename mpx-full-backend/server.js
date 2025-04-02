@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
+import profileRoutes from "./routes/profile.routes.js";
 import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 // Імпортуємо middleware для перевірки токену
 import { verifyToken } from "./middleware/auth.middleware.js";
@@ -18,10 +21,9 @@ app.use(express.json());
 
 // Маршрути для авторизації
 app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
 
 // Налаштовуємо статичні файли для аватарів
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

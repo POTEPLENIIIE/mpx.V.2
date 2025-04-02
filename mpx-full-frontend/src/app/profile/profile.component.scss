@@ -1,0 +1,128 @@
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Додано */
+  min-height: calc(100vh - 80px); /* Вся висота екрану мінус navbar+footer */
+  padding: 40px 20px;
+  background-color: #1b1c26;
+}
+
+.profile-container {
+  max-width: 700px; /* 🔽 зменшили з 700 */
+  background-color: #2a2b38;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  padding: 25px 30px; /* 🔽 менше внутрішніх відступів */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+  color: #3f5fff;
+  margin-bottom: 20px;
+}
+
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #22df58;
+  transition: transform 0.3s ease;
+}
+
+.avatar-img:hover {
+  transform: scale(1.05);
+}
+
+.profile-details {
+  background-color: #1d1e26;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-details p {
+  font-size: 15px;
+  color: #ddd;
+  margin: 8px 0;
+}
+
+.profile-details p strong {
+  color: #22df58;
+}
+
+.error-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #ff5252;
+  font-size: 14px;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #323232;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.toast.success {
+  background-color: #22df58;
+}
+
+.toast.error {
+  background-color: #ff5252;
+}
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-details p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .profile-wrapper {
+    align-items: flex-start; /* Щоб на мобілці було зверху */
+    padding-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .profile-wrapper {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-wrapper {
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
