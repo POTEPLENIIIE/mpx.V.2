@@ -19,8 +19,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: true, // автоматично дозволяє будь-який origin з credentials
-  credentials: true,
+  origin: "https://minecraftprojectx.com",
+  credentials: true
 }));
 
 

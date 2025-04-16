@@ -65,5 +65,8 @@ export class AuthService {
   getUsername(): string | null {
     return localStorage.getItem("username");
   }
+  requestPasswordReset(email: string) {
+    return this.http.post<{ message: string }>('/api/auth/request-reset', { email });
+  }
   
 }

@@ -26,4 +26,9 @@ export class UserService {
       { headers }
     );
   }
+
+  resendVerificationEmail(email: string) {
+    return this.http.post<{ message: string }>("/api/auth/resend-email", { email });
+  }
+  
 }

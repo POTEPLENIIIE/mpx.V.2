@@ -6,7 +6,7 @@ import {
   AbstractControl,
   ReactiveFormsModule,
 } from "@angular/forms";
-
+import { RouterModule } from '@angular/router';
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
@@ -20,6 +20,7 @@ import { FooterComponent } from "../footer/footer.component";
   styleUrls: ["./login.component.scss"],
   standalone: true,
   imports: [
+    RouterModule,
     NavbarComponent,
     ReactiveFormsModule,
     FooterComponent,

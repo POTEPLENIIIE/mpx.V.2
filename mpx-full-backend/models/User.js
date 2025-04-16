@@ -9,6 +9,12 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+    emailVerificationToken: String,
+    isEmailVerified: {
+      type: Boolean,
+      default: false
+    },
+    
     email: {
       type: String,
       required: true,
@@ -21,6 +27,8 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 6,
     },
+    passwordResetToken: { type: String },
+    passwordResetExpires: { type: Date },
     role: {
       type: String,
       default: "Гравець",
@@ -34,7 +42,7 @@ const userSchema = new mongoose.Schema(
       default: "default-avatar.webp",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("User", userSchema);

@@ -11,11 +11,12 @@ import { CommonModule } from "@angular/common";
 import { AuthService } from "../services/auth.service";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from "../footer/footer.component";
-
+import { RouterModule } from "@angular/router";
 @Component({
   selector: "app-register",
   standalone: true,
   imports: [
+    RouterModule,
     CommonModule,
     ReactiveFormsModule,
     NavbarComponent,
@@ -40,13 +41,34 @@ export class RegisterComponent {
   ) {
     this.registerForm = this.fb.group(
       {
-        username: ["", [Validators.required, Validators.minLength(3)]],
-        email: ["", [Validators.required, Validators.email]],
-        password: ["", [Validators.required, Validators.minLength(6)]],
+        username: [
+          "", 
+          [
+            Validators.required,
+            Validators.minLength(3),
+            Validators.pattern('^[a-zA-Z0-9_-]+$') // ❗️тільки латиниця, цифри, _ та -
+          ]
+        ],
+        email: [
+          "", 
+          [
+            Validators.required,
+            Validators.email,
+            Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+          ]
+        ],
+        password: [
+          "", 
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{6,}$') // хоча б літера і цифра
+          ]
+        ],
         confirmPassword: ["", Validators.required],
       },
       { validators: this.passwordMatchValidator }
-    );
+    );    
   }
 
   // Геттери для зручного доступу
@@ -104,10 +126,11 @@ export class RegisterComponent {
 
       this.authService.register(formData).subscribe({
         next: () => {
-          this.showToast("Успішна реєстрація!", "success");
+          this.showToast("На вашу пошту надіслано лист для підтвердження!", "success");
           setTimeout(() => {
-            window.location.href = "/profile";
-          }, 1000); // трошки паузи, щоб показати toast
+            this.router.navigate(['/login']);
+          }, 2500);
+
         },
         error: (err) => {
           console.error(err);

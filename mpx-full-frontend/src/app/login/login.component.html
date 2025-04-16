@@ -37,9 +37,14 @@
       <div *ngIf="password?.invalid && password?.touched" class="error">
         Пароль не може бути порожнім
       </div>
+      <!-- Forgot Password Link -->
+      <div class="forgot-link">
+        <a routerLink="/forgot-password">Забули пароль?</a>
+      </div>   
+      
+      <button type="submit" [disabled]="loginForm.invalid">Увійти</button>   
 
-      <button type="submit" [disabled]="loginForm.invalid">Увійти</button>
-
+      <!-- Register Link -->
       <div class="switch-link">
         Немає акаунту?
         <a routerLink="/register">Зареєструватися</a>

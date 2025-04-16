@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
   toastType = "";
   toastTimeout: any;
   environment = environment;
+  isLoading = true;
 
   constructor(private userService: UserService) {}
 
@@ -38,22 +39,23 @@ export class ProfileComponent implements OnInit {
     this.now = Date.now();
   }
 
-  getUserData(): void {
-    this.userService.getUserProfile().subscribe({
-      next: (data) => {
-        console.log("🟢 Нові дані:", data);
-        this.userData = {
-          ...data,
-          avatar: data.avatar || 'default-avatar.webp',
-        };
-        this.now = Date.now();
-      },
-      error: (err) => {
-        console.error("❌ Помилка отримання:", err);
-        this.errorMessage = "Не вдалося отримати дані профілю.";
-      },
-    });
-  }
+getUserData(): void {
+  this.userService.getUserProfile().subscribe({
+    next: (data) => {
+      this.userData = {
+        ...data,
+        avatar: data.avatar || 'default-avatar.webp',
+      };
+      this.now = Date.now();
+      this.isLoading = false;
+    },
+    error: (err) => {
+      console.error("❌ Помилка отримання:", err);
+      this.errorMessage = "Не вдалося отримати дані профілю.";
+      this.isLoading = false;
+    },
+  });
+}
 
   handleAvatarUpdate(newAvatarFilename: string): void {
     this.userData.avatar = newAvatarFilename;
@@ -70,4 +72,16 @@ export class ProfileComponent implements OnInit {
       this.toastType = "";
     }, 4000);
   }
+
+  resendEmail(): void {
+    this.userService.resendVerificationEmail(this.userData.email).subscribe({
+      next: () => {
+        this.showToast("Лист на підтвердження надіслано повторно", "success");
+      },
+      error: () => {
+        this.showToast("Помилка при надсиланні листа", "error");
+      }
+    });
+  }
+  
 }

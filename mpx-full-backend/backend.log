@@ -1,182 +1,173 @@
 Server running on http://localhost:4000
 Connected to database on port 4000
+📩 POST запит на: /api/auth/request-reset
+✅ Лист відправлено на: potepleniiie@gmail.com
+📩 POST запит на: /api/auth/reset-password
+📩 POST запит на: /api/auth/login
 📥 Headers: {
   connection: 'upgrade',
   host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
+  'sec-ch-ua-platform': '"Windows"',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDAyZWUzOWZlOTUyZDRmNmU0YWE5NyIsImlhdCI6MTc0NDg0NjU2NCwiZXhwIjoxNzQ1NDUxMzY0fQ.YNyqfVEOjjTPztgP9fc7Ti_sdvbLEQepfgH57qnzFZs',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36',
   accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
+  'sec-ch-ua': '"Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-fetch-site': 'same-origin',
   'sec-fetch-mode': 'cors',
   'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
+  referer: 'https://minecraftprojectx.com/profile',
   'accept-encoding': 'gzip, deflate, br, zstd',
   'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
+  'if-none-match': 'W/"139-JeIm/K4HkiXz8pxxBhEMhcYXwXs"'
+}
+📩 POST запит на: /api/auth/request-reset
+📥 Headers: {
+  connection: 'upgrade',
+  host: 'minecraftprojectx.com',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNDkwNywiZXhwIjoxNzQ1NDE5NzA3fQ.gMW0EM__tI88ys8td29M-a2oURiwklcSeFtnHG2VeQI',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"',
+  'sec-fetch-mode': 'cors',
+  accept: 'application/json, text/plain, */*',
+  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.1 Safari/605.1.15',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
+}
+📩 POST запит на: /api/auth/register
+✅ Лист відправлено на: potepleniiie@gmail.com
+📩 POST запит на: /api/auth/register
+✅ Лист відправлено на: genordhd@gmail.com
+📩 POST запит на: /api/auth/login
+📥 Headers: {
+  connection: 'upgrade',
+  host: 'minecraftprojectx.com',
+  'sec-ch-ua-platform': '"Windows"',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDE2MmM0MGIxMmVkNWU4Y2IyMSIsImlhdCI6MTc0NDg0NjkwMiwiZXhwIjoxNzQ1NDUxNzAyfQ.TBcveV2W7EgHGFaa4l3t_nJcHak9B6ezHctX2n7hrHY',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36',
+  accept: 'application/json, text/plain, */*',
+  'sec-ch-ua': '"Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-fetch-site': 'same-origin',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'https://minecraftprojectx.com/profile',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'uk,uk-UA;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,tr;q=0.5',
+  'if-none-match': 'W/"154-DRGTLrn5Cwwkv98ydCfYa5BU/S0"'
+}
+📩 POST запит на: /api/auth/request-reset
+✅ Лист відправлено на: genordhd@gmail.com
+📩 POST запит на: /api/auth/login
+📥 Headers: {
+  connection: 'upgrade',
+  host: 'minecraftprojectx.com',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'sec-fetch-mode': 'cors',
+  accept: 'application/json, text/plain, */*',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NjkyNiwiZXhwIjoxNzQ1NDUxNzI2fQ.REtzRObMZApMaggaZlf8GWe_OvZo6RtwrAeqGw5rM8Y',
+  'sec-fetch-dest': 'empty',
+  referer: 'https://minecraftprojectx.com/profile'
+}
+📩 POST запит на: /api/auth/reset-password
+📩 POST запит на: /api/auth/request-reset
+✅ Лист відправлено на: genordhd@gmail.com
+📩 POST запит на: /api/auth/request-reset
+📩 POST запит на: /api/auth/reset-password
+✅ Лист відправлено на: potepleniiie@gmail.com
+📩 POST запит на: /api/auth/reset-password
+📩 POST запит на: /api/auth/login
+📥 Headers: {
+  connection: 'upgrade',
+  host: 'minecraftprojectx.com',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NzAyNiwiZXhwIjoxNzQ1NDUxODI2fQ.egM_QVGJ4NLxKWRFmZKu_2w60By0N6zDPl7qVvf4DEA',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'if-none-match': 'W/"139-wLEF9CdkI26TCP5B5NbOQjpn91M"',
+  'sec-fetch-mode': 'cors',
+  accept: 'application/json, text/plain, */*',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
 }
 📥 Headers: {
   connection: 'upgrade',
   host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NzAyNiwiZXhwIjoxNzQ1NDUxODI2fQ.egM_QVGJ4NLxKWRFmZKu_2w60By0N6zDPl7qVvf4DEA',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'if-none-match': 'W/"139-f9I/hnmjUseNGKJkM0UiZAtEWh8"',
   'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
+  accept: 'application/json, text/plain, */*',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
 }
 📥 Headers: {
   connection: 'upgrade',
   host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
+  'content-length': '73983',
   accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NzAyNiwiZXhwIjoxNzQ1NDUxODI2fQ.egM_QVGJ4NLxKWRFmZKu_2w60By0N6zDPl7qVvf4DEA',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
   'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
+  'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryFXSemBcVSdGoZT0K',
+  origin: 'https://minecraftprojectx.com',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
+}
+📩 POST запит на: /api/profile/avatar
+🟡 file.mimetype: image/jpeg
+🟢 ПОЧАТОК
+🧪 req.file: {
+  fieldname: 'avatar',
+  originalname: 'IMG_2422.jpeg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: '/var/www/mpx/uploads/avatars',
+  filename: '1744847076361_d1cf2eba-1e49-4f42-aec9-38da8f5d412d.jpeg',
+  path: '/var/www/mpx/uploads/avatars/1744847076361_d1cf2eba-1e49-4f42-aec9-38da8f5d412d.jpeg',
+  size: 73694
+}
+⚙️ Обробка sharp...
+✅ Файл конвертовано: /var/www/mpx/uploads/avatars/Qupsy_8a2b48fe-8092-4314-90c9-cda19804d4e1.jpg
+🟢 ВСЕ ОК, avatar збережено: Qupsy_8a2b48fe-8092-4314-90c9-cda19804d4e1.jpg
+📩 POST запит на: /api/auth/login
+📥 Headers: {
+  connection: 'upgrade',
+  host: 'minecraftprojectx.com',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NzIwNywiZXhwIjoxNzQ1NDUyMDA3fQ.EbaTJGtvhBEIqoM0o7miIsKWsR6yPuxSOMOVydkNfFk',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'if-none-match': 'W/"139-f9I/hnmjUseNGKJkM0UiZAtEWh8"',
+  'sec-fetch-mode': 'cors',
+  accept: 'application/json, text/plain, */*',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
 }
 📥 Headers: {
   connection: 'upgrade',
   host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDA0MDAxMmM0MGIxMmVkNWU4Y2IxZCIsImlhdCI6MTc0NDg0NzIwNywiZXhwIjoxNzQ1NDUyMDA3fQ.EbaTJGtvhBEIqoM0o7miIsKWsR6yPuxSOMOVydkNfFk',
+  'sec-fetch-site': 'same-origin',
+  'accept-language': 'ru',
+  'accept-encoding': 'gzip, deflate, br',
+  'if-none-match': 'W/"16f-N13W6DihyFhZVQTLhSwfIwH5Z/w"',
   'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
   accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
-}
-📥 Headers: {
-  connection: 'upgrade',
-  host: 'minecraftprojectx.com',
-  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmZiZWY2ZTgyOWQzMGJkNTJhZWM0NyIsImlhdCI6MTc0NDgxNzc2MywiZXhwIjoxNzQ1NDIyNTYzfQ.m4RoMUxbfCU359bMMh4XnAUYJlb5TaIpMj6a8AI-NY4',
-  origin: 'https://minecraftprojectx.com.',
-  'sec-fetch-site': 'cross-site',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-dest': 'empty',
-  referer: 'https://minecraftprojectx.com./',
-  'accept-encoding': 'gzip, deflate, br, zstd',
-  'accept-language': 'uk-UA,uk;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6',
-  'if-none-match': 'W/"158-N9u8tHf4QaGAbeXbvK5xtGtcv0g"'
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.7049.83 Mobile/15E148 Safari/604.1',
+  referer: 'https://minecraftprojectx.com/profile',
+  'sec-fetch-dest': 'empty'
 }

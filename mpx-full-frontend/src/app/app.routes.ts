@@ -20,6 +20,20 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: "forgot-password",
+    loadComponent: () =>
+      import("./forgot-password/forgot-password.component").then(
+        (m) => m.ForgotPasswordComponent
+      ),
+  },
+  {
+    path: "reset-password",
+    loadComponent: () =>
+      import("./reset-password/reset-password.component").then(
+        (m) => m.ResetPasswordComponent
+      ),
+  },  
+  {
     path: "register",
     loadComponent: () =>
       import("./register/register.component").then((m) => m.RegisterComponent),
@@ -35,6 +49,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import("./payments/payments.component").then((m) => m.PaymentsComponent),
     canActivate: [authGuard],
+  },
+  {
+    path: "verify-email",
+    loadComponent:()=>
+      import("./verify-email/verify-email.component").then((m) => m.VerifyEmailComponent),
   },
   {
     path: "profile",
