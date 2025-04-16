@@ -3,6 +3,8 @@ import path from "path";
 import User from "../models/User.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { v4 as uuidv4 } from "uuid";
+import sharp from "sharp";
 
 // Для `__dirname` в ES module
 const __filename = fileURLToPath(import.meta.url);
@@ -27,41 +29,53 @@ export const getUserData = async (req, res) => {
 
 export const updateAvatar = async (req, res) => {
   try {
+    console.log("🟢 ПОЧАТОК");
+
     const user = await User.findById(req.user.id);
-    if (!user)
+    if (!user) {
+      console.log("🔴 Користувача не знайдено");
       return res.status(404).json({ message: "Користувача не знайдено" });
+    }
 
-    if (!req.file)
+    if (!req.file) {
+      console.log("🔴 Файл не передано");
       return res.status(400).json({ message: "Файл не завантажено" });
+    }
 
-    const newFilename = req.file.filename;
+    console.log("🧪 req.file:", req.file);
 
-    // 💾 Зберігаємо нового аватара в базу
+    const newFileName = `${user.username}_${uuidv4()}.jpg`;
+    const finalPath = path.join("/var/www/mpx/uploads/avatars", newFileName);
+
+    console.log("⚙️ Обробка sharp...");
+
+    await sharp(req.file.path)
+      .jpeg({ quality: 90 })
+      .toFile(finalPath);
+
+    console.log("✅ Файл конвертовано:", finalPath);
+
+    fs.unlinkSync(req.file.path);
+
     const oldFilename = user.avatar;
-    user.avatar = newFilename;
+    user.avatar = newFileName;
     await user.save();
 
-    // 🧹 Видаляємо попередній (після збереження нового)
     if (oldFilename && oldFilename !== "default-avatar.webp") {
-      const oldPath = path.join(
-        __dirname,
-        "..",
-        "uploads",
-        "avatars",
-        oldFilename
-      );
+      const oldPath = path.join("/var/www/mpx/uploads/avatars", oldFilename);
       if (fs.existsSync(oldPath)) {
         fs.unlink(oldPath, (err) => {
-          if (err) console.error("❌ Помилка видалення старого аватара:", err);
-          else console.log("🧹 Старий аватар видалено:", oldFilename);
+          if (err) console.error("❌ Видалення старого:", err);
+          else console.log("🧹 Видалено старий файл:", oldFilename);
         });
       }
     }
 
-    console.log("✅ Збережено avatar у базі:", user.avatar);
-    res.json({ message: "Аватар оновлено", avatar: user.avatar });
+    console.log("🟢 ВСЕ ОК, avatar збережено:", newFileName);
+    res.json({ message: "Аватар оновлено", avatar: newFileName });
+
   } catch (err) {
-    console.error("❌ Помилка при оновленні аватара:", err);
-    res.status(500).json({ message: "Помилка сервера" });
+    console.error("❌ ФАТАЛЬНА ПОМИЛКА:", err);
+    res.status(500).json({ message: err.message || "Помилка завантаження" });
   }
 };

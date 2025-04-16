@@ -17,6 +17,8 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  touch-action: manipulation;
+  pointer-events: auto;
 }
 button:hover {
   background-color: #1cb94b;
@@ -34,6 +36,9 @@ button:hover {
   justify-content: center;
   align-items: center;
   animation: fadeIn 0.3s ease-in-out;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
 }
 
 .popup-box {
@@ -75,6 +80,8 @@ button:hover {
 
 .popup-buttons button {
   background-color: #3f5fff;
+  touch-action: manipulation;
+  pointer-events: auto;
 }
 .popup-buttons button:hover {
   background-color: #2e48f3;
@@ -97,3 +104,39 @@ button:hover {
     transform: scale(1);
   }
 }
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3f5fff;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+.error-msg {
+  color: #ff4c4c;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.success-msg {
+  color: #22df58;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+

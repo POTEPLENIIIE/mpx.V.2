@@ -1,3 +1,4 @@
+// ✅ avatar-upload.component.ts
 import {
   Component,
   ViewChild,
@@ -7,6 +8,8 @@ import {
 } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
+import { environment } from "src/environments/environment";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: "app-avatar-upload",
@@ -21,11 +24,12 @@ export class AvatarUploadComponent {
 
   selectedFile: File | null = null;
   previewUrl: string | null = null;
+  errorMessage: string | null = null;
+  successMessage: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService) {}
 
-  triggerFileInput() {
-    console.log("📁 Відкрито вибір файлу");
+  triggerFileInput(): void {
     this.fileInput.nativeElement.click();
   }
 
@@ -38,55 +42,75 @@ export class AvatarUploadComponent {
       const reader = new FileReader();
       reader.onload = () => {
         this.previewUrl = reader.result as string;
-        console.log("📷 Превʼю готове:", this.previewUrl);
+        this.errorMessage = null;
+        this.successMessage = null;
+        document.body.classList.add("show-preview");
       };
       reader.readAsDataURL(file);
     }
   }
 
-  onUploadClicked(): void {
-    console.log('⬆️ Кнопка "Завантажити" натиснута!');
-    this.uploadAvatar();
-  }
-
   cancelPreview(): void {
     this.previewUrl = null;
     this.selectedFile = null;
-    this.fileInput.nativeElement.value = ""; // 👈 очищаємо file input вручну
+    this.errorMessage = null;
+    this.successMessage = null;
+    this.fileInput.nativeElement.value = "";
+    document.body.classList.remove("show-preview");
+  }
+
+  onUploadClicked(): void {
+    this.uploadAvatar();
   }
 
   uploadAvatar(): void {
     if (!this.selectedFile) {
-      alert("❗ Файл не обрано");
+      this.errorMessage = "❗ Файл не обрано";
       return;
     }
 
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("❗ Токен не знайдено");
+    const token = this.auth.getToken();
+    const username = this.auth.getUsername();
+
+    if (!token || !username) {
+      this.errorMessage = "❗ Токен або імʼя користувача не знайдено";
       return;
     }
 
     const formData = new FormData();
     formData.append("avatar", this.selectedFile);
+    formData.append("username", username);
 
     const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
 
     this.http
       .post<{ avatar: string }>(
-        "http://localhost:4000/api/profile/avatar",
+        `${environment.apiUrl}/profile/avatar`,
         formData,
         { headers }
       )
       .subscribe({
         next: (res) => {
-          console.log("✅ Успіх:", res);
           this.avatarUpdated.emit(res.avatar);
           this.selectedFile = null;
           this.previewUrl = null;
+          this.successMessage = "✅ Аватар успішно оновлено!";
+          this.errorMessage = null;
+          document.body.classList.remove("show-preview");
+
+          // Показати повідомлення в popup (мобільна підтримка)
+          setTimeout(() => {
+            this.successMessage = null;
+          }, 3000);
         },
         error: (err) => {
-          console.error("❌ Помилка при завантаженні:", err);
+          const backendMsg = err?.error?.message;
+          this.errorMessage = backendMsg || "❌ Помилка формату зображення. Спробуйте інше.";
+          this.successMessage = null;
+        
+          setTimeout(() => {
+            this.errorMessage = null;
+          }, 5000);
         },
       });
   }

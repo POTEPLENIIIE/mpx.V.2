@@ -16,7 +16,10 @@ export class NavbarComponent {
   constructor(private router: Router, public authService: AuthService) {}
 
   menuOpen: boolean = false;
-
+  navigateHome(): void {
+    window.location.href = "https://minecraftprojectx.com/home";
+  }
+  
   to_settings(event: Event) {
     event.preventDefault();
     this.router.navigate(["/settings"]);

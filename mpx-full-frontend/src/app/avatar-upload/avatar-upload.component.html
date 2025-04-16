@@ -1,9 +1,10 @@
+
 <div class="avatar-upload-container">
-  <button type="button" (click)="triggerFileInput()">
-    Обрати аватар (.jpg)
-  </button>
+  <!-- ✅ Важливо: не кастомна кнопка, а label -->
+  <label for="fileInput" class="upload-label">Завантажити аватар</label>
   <input
     #fileInput
+    id="fileInput"
     type="file"
     accept=".jpg,.jpeg"
     (change)="onFileSelected($event)"
@@ -15,11 +16,15 @@
       <h3>Попередній перегляд</h3>
       <p class="info-text">
         Ось як виглядатиме ваш новий аватар. Якщо все влаштовує — натисніть
-        "Завантажити".
+        "Підтвердити".
       </p>
       <img [src]="previewUrl" alt="Превʼю" class="avatar-preview" />
+            <!-- Повідомлення -->
+            <div *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</div>
+            <div *ngIf="successMessage" class="success-msg">{{ successMessage }}</div>
+      
       <div class="popup-buttons">
-        <button type="button" (click)="onUploadClicked()">Завантажити</button>
+        <button (click)="onUploadClicked()">Підтвердити</button>
         <button type="button" class="cancel-btn" (click)="cancelPreview()">
           Скасувати
         </button>

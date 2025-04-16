@@ -5,7 +5,13 @@ import User from "../models/User.js";
 
 export const registerUser = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const username = req.body?.username || "";
+    const email = req.body?.email || "";
+    const password = req.body?.password || "";
+
+    if (!username || !email || !password) {
+      return res.status(400).json({ message: "Заповніть усі поля" });
+    }
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -36,17 +42,20 @@ export const registerUser = async (req, res) => {
   }
 };
 
+
 export const loginUser = async (req, res) => {
   try {
-    const { usernameOrEmail, password } = req.body;
+    const usernameOrEmail = req.body?.usernameOrEmail || "";
+    const password = req.body?.password || "";
 
-    // Перевірка на email або username
+    if (!usernameOrEmail || !password) {
+      return res.status(400).json({ message: "Введіть логін та пароль" });
+    }
+
     let user;
     if (usernameOrEmail.includes("@")) {
-      // Якщо введено email
       user = await User.findOne({ email: usernameOrEmail });
     } else {
-      // Якщо введено username
       user = await User.findOne({ username: usernameOrEmail });
     }
 
@@ -54,23 +63,26 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Користувача не знайдено" });
     }
 
-    // Перевірка паролю
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: "Невірний пароль" });
     }
 
-    // Генерація JWT токену
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d", // Термін дії токену 7 днів
+      expiresIn: "7d",
     });
 
-    res.json({ token }); // Повертаємо токен
+    res.json({
+      token,
+      username: user.username, // 👈 це обов’язково
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Помилка авторизації" });
   }
 };
+
+
 
 export const getUserData = async (req, res) => {
   try {

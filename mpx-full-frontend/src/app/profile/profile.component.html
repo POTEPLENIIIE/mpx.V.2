@@ -6,38 +6,35 @@
 </div>
 
 <section class="profile-wrapper">
-  <div class="profile-container">
-    <h2>Профіль користувача</h2>
-
-    <div *ngIf="userData" class="profile-box">
+  <div class="profile-card">
+    <div class="avatar-section">
       <img
-        *ngIf="userData.avatar"
-        [attr.src]="
-          'http://localhost:4000/uploads/avatars/' +
-          userData.avatar +
-          '?t=' +
-          now
-        "
+        *ngIf="'avatar' in userData"
+        [attr.src]="environment.uploadBaseUrl + '/avatars/' + userData.avatar + '?t=' + now"
+        (error)="userData.avatar = 'default-avatar.webp'"
         alt="Аватар"
         class="avatar-img"
         id="avatarPreview"
       />
-
-      <app-avatar-upload
-        (avatarUpdated)="handleAvatarUpdate($event)"
-      ></app-avatar-upload>
-
-      <div class="profile-details">
-        <p><strong>Ім'я користувача:</strong> {{ userData.username }}</p>
-        <p><strong>Email:</strong> {{ userData.email }}</p>
-        <p><strong>Баланс:</strong> {{ userData.balance }} коїнів</p>
-      </div>
+      <app-avatar-upload (avatarUpdated)="handleAvatarUpdate($event)"></app-avatar-upload>
     </div>
 
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
+    <div class="info-section">
+      <h2>{{ userData.username }}</h2>
+      <p class="role-label">Профіль користувача</p>
+
+      <div class="info-box">
+        <p><strong>Email:</strong> {{ userData.email }}</p>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
     </div>
   </div>
 </section>
+
+
+
 
 <app-footer></app-footer>
