@@ -33,11 +33,19 @@ export class ProfileComponent implements OnInit {
     this.getUserData();
   }
 
+  onAvatarLoadError(): void {
+    this.userData.avatar = 'default-avatar.webp';
+    this.now = Date.now();
+  }
+
   getUserData(): void {
     this.userService.getUserProfile().subscribe({
       next: (data) => {
         console.log("🟢 Нові дані:", data);
-        this.userData = JSON.parse(JSON.stringify(data));
+        this.userData = {
+          ...data,
+          avatar: data.avatar || 'default-avatar.webp',
+        };
         this.now = Date.now();
       },
       error: (err) => {

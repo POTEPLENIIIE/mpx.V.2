@@ -3,9 +3,8 @@
     <div class="logo-image"></div>
   </a>
 
-
   <!-- Бургер -->
-  <div class="burger" (click)="toggleMenu()">
+  <div class="burger" [ngClass]="{ open: menuOpen }" (click)="toggleMenu()">
     <div></div>
     <div></div>
     <div></div>
@@ -13,33 +12,17 @@
 
   <!-- Навігація -->
   <nav [ngClass]="{ open: menuOpen }">
-    <!-- Якщо НЕ авторизований -->
-    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/home" routerLinkActive="active-link">Сайт</a>
-    </div>
-    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/register" routerLinkActive="active-link">Реєстрація</a>
-    </div>
-    <div *ngIf="!authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/login" routerLinkActive="active-link">Логін</a>
-    </div>
-    <!-- Якщо авторизований -->
-    <div *ngIf="authService.isLoggedIn()" class="nav-item">
-      <a
-        routerLink="/profile"
-        routerLinkActive="active-link"
-        (click)="to_dashboard($event)"
-        >Профіль</a
-      >
-    </div>
-    <div *ngIf="authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/settings" (click)="to_settings($event)">Налаштування</a>
-    </div>
-    <div *ngIf="authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/payments" (click)="to_payments($event)">Платежі</a>
-    </div>
-    <div *ngIf="authService.isLoggedIn()" class="nav-item">
-      <a routerLink="/login" (click)="exit($event)">Вийти</a>
-    </div>
+    <ng-container *ngIf="!authService.isLoggedIn(); else loggedInLinks">
+      <div class="nav-item"><a routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Сайт</a></div>
+      <div class="nav-item"><a routerLink="/register" routerLinkActive="active-link">Реєстрація</a></div>
+      <div class="nav-item"><a routerLink="/login" routerLinkActive="active-link">Логін</a></div>
+    </ng-container>
+
+    <ng-template #loggedInLinks>
+      <div class="nav-item"><a routerLink="/profile" routerLinkActive="active-link">Профіль</a></div>
+      <div class="nav-item"><a routerLink="/settings" routerLinkActive="active-link">Налаштування</a></div>
+      <div class="nav-item"><a routerLink="/payments" routerLinkActive="active-link">Платежі</a></div>
+      <div class="nav-item"><a href="#" (click)="exit($event)">Вийти</a></div>
+    </ng-template>
   </nav>
 </div>

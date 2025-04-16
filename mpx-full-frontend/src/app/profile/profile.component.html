@@ -9,13 +9,14 @@
   <div class="profile-card">
     <div class="avatar-section">
       <img
-        *ngIf="'avatar' in userData"
-        [attr.src]="environment.uploadBaseUrl + '/avatars/' + userData.avatar + '?t=' + now"
-        (error)="userData.avatar = 'default-avatar.webp'"
-        alt="Аватар"
-        class="avatar-img"
-        id="avatarPreview"
+      *ngIf="userData?.avatar"
+      [src]="environment.uploadBaseUrl + '/avatars/' + userData.avatar + '?t=' + now"
+      (error)="onAvatarLoadError()"
+      alt="Аватар"
+      class="avatar-img"
+      id="avatarPreview"
       />
+    
       <app-avatar-upload (avatarUpdated)="handleAvatarUpdate($event)"></app-avatar-upload>
     </div>
 

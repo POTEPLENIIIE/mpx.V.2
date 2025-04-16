@@ -8,102 +8,129 @@
   left: 0;
   right: 0;
   color: white;
-  z-index: 100;
+  z-index: 1000;
   padding: 16px 32px;
   font-family: "Segoe UI", sans-serif;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-.logo-image{
-  width: 160px;
-  height: 60px;
-  background-image: url("../../assets/images/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-}
-.logo {
-  all: unset;
-  cursor: pointer;
-  margin-right: auto;
-}
+  height: 80px;
 
-nav {
-  display: flex;
-  flex-direction: row;
-
-  .nav-item {
+  .logo {
+    all: unset;
+    cursor: pointer;
     display: flex;
     align-items: center;
 
-    a {
-      width: 100%;
-      color: white;
+    .logo-image {
+      width: 160px;
+      height: 60px;
+      background-image: url("../../assets/images/logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+  
+    div {
+      width: 24px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      margin: 3px 0; // додає відстань між лініями
+      transition: all 0.3s ease;
+    }
+  
+    &.open div:nth-child(1) {
+      transform: rotate(45deg);
+      position: absolute;
+      top: 10px;
+    }
+  
+    &.open div:nth-child(2) {
+      opacity: 0;
+    }
+  
+    &.open div:nth-child(3) {
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 10px;
+    }
+  }
+  
+  
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    .nav-item a {
       font-size: 18px;
+      color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 14px;
+      border-radius: 6px;
       transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #3f5fff44;
+      }
 
       &.active-link {
         background-color: #3f5fff;
-        font-weight: 500;
+        color: white !important;
+        font-weight: 600;
       }
     }
-  }
-}
 
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 20;
-
-  div {
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-}
-
-.nav-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// 🌐 Адаптив
-@media (max-width: 1100px) {
-  .burger {
-    display: flex;
-  }
-
-  nav {
-    width: 60%;
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: #111;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-
-    &.open {
-      display: flex;
-    }
-
-    .nav-item {
-      font-size: 20px;
+    @media (max-width: 1100px) {
+      position: fixed;
+      top: 115px;
+      left: 0;
       width: 100%;
-      justify-content: flex-start;
+      background-color: #1b1c26;
+      flex-direction: column;
+      padding: 16px 0;
+      display: none;
+      z-index: 999;
+      border-top: 1px solid #3f5fff22;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 
-      a {
-        width: 100%;
-        display: block;
-        text-align: center;
+      &.open {
+        display: flex;
       }
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 6px 0;
+
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          padding: 0;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .burger {
+      display: flex;
     }
   }
 }

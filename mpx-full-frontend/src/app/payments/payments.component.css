@@ -1,0 +1,30 @@
+.payments-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    background-color: #f5f5f5;
+    padding: 120px 20px 40px;
+  
+    .payments-box {
+      background-color: #2a2b38;
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+  
+      h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+  
+      .under-construction {
+        font-size: 18px;
+        color: #aaa;
+      }
+    }
+  }
+  

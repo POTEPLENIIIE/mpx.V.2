@@ -2,9 +2,9 @@
   "name": "mpx-full-frontend",
   "version": "0.0.1",
 "scripts": {
-  "start": "ng serve --host 0.0.0.0"
+  "start": "ng serve --host 0.0.0.0",
+  "build": "ng build --configuration=production"
 },
-
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
